@@ -2,11 +2,11 @@
 
 namespace AdventOfCode
 {
-    class Program
+    class AdventOfCode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Puzzle2020_10.Part2());
+            Console.WriteLine(new AdventOfCode2023Day2().Part2());
         }
     }
 }
