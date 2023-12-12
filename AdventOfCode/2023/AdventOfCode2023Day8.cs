@@ -74,7 +74,7 @@ internal class AdventOfCode2023Day8 : IAdventOfCodeDayAsync
         for (int i = 0; i < pathFollowers.Count; i++)
         {
             long stepsTaken = pathFollowers[i].stepsTaken;
-            factors.UnionWith(FindFactors(stepsTaken));
+            factors.UnionWith(AdventOfCodeHelpers.FindFactors(stepsTaken));
         }
 
         foreach (long factor in factors)
@@ -83,26 +83,6 @@ internal class AdventOfCode2023Day8 : IAdventOfCodeDayAsync
         }
 
         return turnsMade.ToString();
-    }
-
-    public List<long> FindFactors(long number)
-    {
-        List<long> factors = new List<long>();
-        long max = (long)Math.Sqrt(number);  // Round down
-
-        for (long factor = 2; factor <= max; ++factor) // Test from 1 to the square root, or the int below it, inclusive.
-        {
-            if (number % factor == 0)
-            {
-                factors.Add(factor);
-                if (factor != number / factor) // Don't add the square root twice!  Thanks Jon
-                {
-                    factors.Add(number / factor);
-                }
-            }
-        }
-
-        return factors;
     }
 
     private Dictionary<string, List<string>> GenerateDirectionOptions(List<string> input)
