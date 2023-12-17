@@ -6,7 +6,7 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new AdventOfCode2023Day9().Part2());
+            Console.WriteLine(new AdventOfCode2023Day12().Part1());
             //RunAsync();
         }
 
